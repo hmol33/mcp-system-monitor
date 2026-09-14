@@ -1,4 +1,14 @@
-from mcp import FastMCP, Context
+try:
+    from mcp.server.fastmcp import FastMCP, Context  # MCP v2.x stable path
+except ImportError:
+    try:
+        # Pre-v2 fallback: Context may live on mcp.server.fastmcp.context
+        from mcp.server.fastmcp import FastMCP
+        from mcp.server.fastmcp.context import Context
+    except ImportError:
+        # Older mcp versions (<2.0) keep FastMCP/Context on the top-level package
+        from mcp import FastMCP, Context
+
 from abc import ABC, abstractmethod
 from typing import Dict, Any, Optional
 import asyncio
