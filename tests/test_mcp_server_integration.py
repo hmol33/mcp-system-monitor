@@ -4,7 +4,7 @@ Tests the actual MCP server endpoints and protocol compliance.
 """
 import pytest
 from unittest.mock import patch, AsyncMock
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer as FastMCP
 from mcp_system_monitor_server import mcp
 
 

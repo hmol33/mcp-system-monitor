@@ -1,13 +1,15 @@
 try:
-    from mcp.server.fastmcp import FastMCP, Context  # MCP v2.x stable path
+    from mcp.server.mcpserver import MCPServer as FastMCP
+    from mcp.server.mcpserver import Context
 except ImportError:
     try:
-        # Pre-v2 fallback: Context may live on mcp.server.fastmcp.context
-        from mcp.server.fastmcp import FastMCP
-        from mcp.server.fastmcp.context import Context
+        from mcp.server.fastmcp import FastMCP, Context  # type: ignore[no-redef]
     except ImportError:
-        # Older mcp versions (<2.0) keep FastMCP/Context on the top-level package
-        from mcp import FastMCP, Context
+        try:
+            from mcp.server.fastmcp import FastMCP  # type: ignore[no-redef]
+            from mcp.server.fastmcp.context import Context  # type: ignore[no-redef]
+        except ImportError:
+            from mcp import FastMCP, Context  # type: ignore[no-redef]
 
 from abc import ABC, abstractmethod
 from typing import Dict, Any, Optional
