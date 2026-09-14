@@ -1,4 +1,4 @@
-from mcp.server.fastmcp import FastMCP, Context
+from mcp import FastMCP, Context
 from abc import ABC, abstractmethod
 from typing import Dict, Any, Optional
 import asyncio
