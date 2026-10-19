@@ -1,4 +1,7 @@
 # MCP System Monitor Server
+<img src="https://img.shields.io/github/stars/hmol33/mcp-system-monitor?style=flat-square&color=blue" alt="Stars">
+<img src="https://img.shields.io/github/forks/hmol33/mcp-system-monitor?style=flat-square&color=green" alt="Forks">
+<img src="https://img.shields.io/github/license/hmol33/mcp-system-monitor?style=flat-square" alt="License">
 
 A cross-platform MCP (Model Context Protocol) server that provides comprehensive real-time system monitoring
 capabilities for LLMs. Built with FastMCP for easy integration with Claude Desktop and other MCP-compatible clients.
